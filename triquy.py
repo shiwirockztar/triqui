@@ -63,8 +63,8 @@ def inputPlayerLetter():
     # ocupa la segunda posición.
 
    
-    #seleccion = input("Selecciona la marca que usarás (X o O): ")
-    seleccion = 'O'
+    seleccion = input("Selecciona la marca que usarás (X o O): ")
+    #seleccion = 'O'
     if simbolo[0] != seleccion.upper():
             simbolo.reverse()
 
