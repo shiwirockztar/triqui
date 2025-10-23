@@ -37,6 +37,7 @@ while True:
             victoria = tr.isWinner(board, letterP) # d. Verificar si el usuario ha ganado el juego.
 
             if victoria : #    Si si, mostrar tablero, mostrar mensaje de felicitación y terminar el juego.
+                tr.drawBoard(board)
                 print("¡Felicidades! ¡Has ganado el juego!")
                 mensaje = pyfiglet.figlet_format("¡VICTORIA!")
                 print(mensaje)
@@ -45,6 +46,7 @@ while True:
 
             empate = tr.isBoardFull(board) # e. Verificar si hay empate.
             if empate : #    Si si, mostrar tablero, mostar mensaje de empate y terminar el juego.
+                tr.drawBoard(board)
                 mensaje = pyfiglet.figlet_format("EMPATE")
                 jugando = False
                 continue
@@ -58,13 +60,11 @@ while True:
 
             move = tr.getComputerMove(board, letterM)# a. Computadora hace jugada.
             board = tr.makeMove(board, letterM, move)# b. Actualizar el tablero.
-            print("move : ", move)
-            print("board : ", board)
-            print("victoria :", victoria)
-            print("empate :", empate)  
+    
             victoria = tr.isWinner(board, letterM)# c. Verificar si la computadora ha ganado el juego.
             
             if victoria : #    Si si, mostrar tablero, mostrar mensaje indicando al usuario que ha perdido y terminar el juego.
+                tr.drawBoard(board)
                 print("¡Lo siento! ¡Vuelve a intentarlo!")
                 mensaje = pyfiglet.figlet_format("¡DERROTA!")
                 print(mensaje)
@@ -73,7 +73,9 @@ while True:
 
             empate = tr.isBoardFull(board)# d. Verificar si hay empate.
             if empate : #    Si si, mostrar tablero, mostar mensaje de empate y terminar el juego.
+                tr.drawBoard(board)
                 mensaje = pyfiglet.figlet_format("EMPATE")
+                print(mensaje)
                 jugando = False
                 continue
 
