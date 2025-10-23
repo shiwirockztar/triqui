@@ -6,7 +6,7 @@ introfile = "intro.txt"
 tr.printIntro(introfile)
 
 
-turn = tr.whoGoesFirst() # Indica quién tiene el turno para jugar, el usuario o la computadora.
+#turn = tr.whoGoesFirst() # Indica quién tiene el turno para jugar, el usuario o la computadora.
 
 
 while True:
@@ -16,6 +16,7 @@ while True:
     letter = tr.inputPlayerLetter()# 3. El usuario debe seleccionar la marca
     letterP = letter[0]
     letterM = letter[1]
+    turn = tr.whoGoesFirst() # Indica quién tiene el turno para jugar, el usuario o la computadora.
     print(turn,' va primero.') # 4. Quién va primero el usuario o la computadora?
 
     jugando = True # El juego ha iniciado
