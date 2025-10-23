@@ -13,8 +13,9 @@ while True:
     board = [" ", " ", " ", " ", " ", " " ," ", " ", " " ]
     tr.drawBoard(board) # 2. Crear el tablero
     print("\n")  # línea en blanco
-    letterP = tr.inputPlayerLetter()[0] # 3. El usuario debe seleccionar la marca
-    letterM = tr.inputPlayerLetter()[1] 
+    letter = tr.inputPlayerLetter()# 3. El usuario debe seleccionar la marca
+    letterP = letter[0]
+    letterM = letter[1]
     print(turn,' va primero.') # 4. Quién va primero el usuario o la computadora?
 
     jugando = True # El juego ha iniciado
@@ -84,5 +85,5 @@ while True:
     jugando = input("Quieres seguir jugando : (Y|N) : ").lower() # 7. Preguntar si el usuario quiere jugar una vez mas
     if jugando in ["n", "no"]: #    Si no, finalizar el programa.
       break
-    else: #    Si si, reiniciar el juego.
+    else: #   Reiniciar el juego.
       continue  

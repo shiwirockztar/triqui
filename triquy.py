@@ -178,36 +178,38 @@ def getComputerMove(board, computerLetter):
 
     if computerLetter == 'X':
         playerLetter = 'O'
-    else:!pip install pyfiglet!pip install pyfiglet!pip install pyfiglet
+    else:
         playerLetter = 'X'
 
 
     # 1. Verificar si la computadora puede ganar...
     for i in range(9):
         if board[i] == ' ':
-            copy = makeMove(board, computerLetter, i+1)
-            if isWinner(copy, computerLetter):
-                return i
+            board_copy = board.copy()
+            board_copy = makeMove(board_copy, computerLetter, i+1)
+            if isWinner(board_copy, computerLetter):
+                return i+1
 
     # 2. Si no, verificar si el usuario puede ganar en la siguiente jugada, si si, bloquear esta jugada...
     for i in range(9):
         if board[i] == ' ':
-            copy = makeMove(board, playerLetter, i+1)
-            if isWinner(copy, playerLetter):
-                return i
+            board_copy = board.copy()
+            board_copy = makeMove(board_copy, playerLetter, i+1)
+            if isWinner(board_copy, playerLetter):
+                return i+1
 
     # 3. Si no, tratar de poner una marca en alguna de las esquinas, si alguna está vacía...
     for i in [0, 2, 6, 8]:
         if board[i] == ' ':
-            return i
+            return i+1
 
     # 4. Si no, tratar de marcar la casilla del centro, si esta está vacía...
     if board[4] == ' ':
-        return 4
+        return 5
 
     # 5. Si no, tratar de poner una marca en alguna de las casillas de los lados...
     for i in [1, 3, 5, 7]:
         if board[i] == ' ':
-            return i
+            return i+1
 
     pass
